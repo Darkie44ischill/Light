@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #2d2d2d;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "block", "sans-serif";
+    src: url("fonts/block.ttf");
+}
+
+h1{
+    font-size: 200px;
+    font-weight: bold;
+    color: #ffe786;
+    text-shadow: 0 0 10px #d4f24f;
+    padding-top: 180px;
+    padding-left: 110px;
+}
+/* Main Container */
+.container {
+    position: relative;
+    width: 95vw;
+    height: 93vh;
+    background: #14002a;
+    border-radius: 30px;
+    border: 6px solid #d4f24f;
+    box-shadow: 0 0 30px #d4f24f;
+    display: flex;
+    padding: 40px;
+    gap: 40px;
+}
+
+/* Sidebar */
+.sidebar {
+    padding-left: 50px;
+    width: 20%;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* BIG Neon Buttons */
+.btn {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 5px solid #ffb2e8;
+    box-shadow: 0 0 30px #ffb2e8;
+    position: relative;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    background: #cfcfcf;
+}
+
+/* Triangle */
+.triangle::after{
+    width: 55px;
+    height: 55px;
+    rotate: 45deg;
+    top: 50px;
+    left: 47px;
+    background: #ffb2e8;
+}
+
+/* Square */
+.square::after {
+    width: 55px;
+    height: 55px;
+    top: 50px;
+    left: 47px;
+    background: #ffb2e8;
+}
+
+/* Vertical rectangle */
+.vertical::after {
+    width: 25px;
+    height: 65px;
+    top: 45px;
+    left: 61px;
+    background: #ff9dfb;
+}
+
+/* Horizontal rectangle */
+.horizontal::after {
+    width: 65px;
+    height: 40px;
+    top: 60px;
+    left: 42px;
+    background: #ff9dfb;
+}
+
+/* Screen Area */
+.screen-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 70px;
+    margin-right: 40px;
+}
+
+/* Black Screen */
+.screen {
+    flex: 1;
+    background: black;
+    border: 6px solid #d4f24f;
+    box-shadow: 0 0 30px #d4f24f;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Bottom neon bar (20% of screen height) */
+.bottom-bar {
+    height: 20%;
+    min-height: 120px;
+    background: #d4f24f;
+}
+
+/* Reset Button */
+.reset-btn {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 4px solid #ffb2e8;
+    color: #ffb2e8;
+    font-size: 32px;
+    text-align: center;
+    line-height: 70px;
+    text-decoration: none;
+    box-shadow: 0 0 25px #ffb2e8;
+    transition: 0.3s;
+}
+
+.reset-btn:hover {
+    background: #ffb2e8;
+    color: #14002a;
+    box-shadow: 0 0 40px #ff9dfb;
+}
+
+/* Active Button */
+.btn.active {
+    background: radial-gradient(circle, #f7a8d7 0%, #f7a8d7 50%, #ff8cd9 80%);
+    box-shadow:
+        0 0 25px #ff8cd9,
+        0 0 50px #ff8cd9,
+        0 0 70px #ff8cd9;
+    border: none;
+    
+}
+
+.btn.active::after {
+    background: #4b2c4f;
+}
+
+
+
+.screen canvas {
+    display: block;
+}
+
+#typewriter-text {
+    font-size: 24px;
+    font-weight: 600;
+    color: #14002a;
+    letter-spacing: 2px;
+    white-space: pre-line;
+
+}
+
+#typewriter-text::after {
+    content: "|";
+    margin-left: 5px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
