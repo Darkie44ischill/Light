@@ -1,3 +1,1 @@
-# Light
-very very very kool light stuff
 Simu-Lit is an interactive light simulation where be light rays react in real time using actual physics. Explore reflection, refraction, dispersion, and birefringence by directly interacting with the scene!!!
