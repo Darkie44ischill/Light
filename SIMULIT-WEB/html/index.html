@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Optics Simulator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="sidebar">
+        <a href="reflection.html" class="btn vertical"></a>
+        <a href="refraction.html" class="btn horizontal"></a>
+        <a href="birefringence.html" class="btn square"></a>
+        <a href="diversion.html" class="btn triangle"></a>
+    </div>
+
+    <div class="screen-container">
+        <div class="screen">
+            <h1>SIMU-LIT</h1>
+        </div>
+        <div class="bottom-bar">
+            <div id="typewriter-text"></div>
+        </div>
+    </div>
+
+</div>
+<script src="js/nav.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const text = "Welcome. Click the buttons on the left to explore different optical phenomena.";
+    const target = document.getElementById("typewriter-text");
+
+    let index = 0;
+
+    function typeLetter() {
+        if (index < text.length) {
+            target.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeLetter, 50); // 0.5 seconds per letter
+        }
+    }
+
+    typeLetter();
+});
+</script>
+
+</body>
+</html>
