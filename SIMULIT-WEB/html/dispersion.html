@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reflection</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.3/lib/addons/p5.sound.min.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/dispersion.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Reset Button -->
+    <a href="index.html" class="reset-btn">&#8592;</a>
+
+    <div class="sidebar">
+        <a href="reflection.html" class="btn vertical"></a>
+        <a href="refraction.html" class="btn horizontal"></a>
+        <a href="birefringence.html" class="btn square"></a>
+        <a href="dispersion.html" class="btn triangle"></a>
+    </div>
+
+    <div class="screen-container">
+        <div class="screen" id="p5-container"></div>
+        <div class="bottom-bar">
+            <div id="typewriter-text"></div>
+        </div>
+    </div>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const lines = [
+        "Try hovering and left-click + hold to see how the angle changes!",
+        "Dispersion: Light splits into a spectrum of colors when passing through a prism.",
+        "At each surface refraction occurs, bending the light and separating it into its component colors."
+    ];
+
+    const target = document.getElementById("typewriter-text");
+
+    let lineIndex = 0;
+    let charIndex = 0;
+
+    function type() {
+        if (lineIndex < lines.length) {
+
+            if (charIndex < lines[lineIndex].length) {
+                target.textContent += lines[lineIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, 50);
+            } else {
+                target.textContent += "\n\n"; // spacing between lines
+                lineIndex++;
+                charIndex = 0;
+                setTimeout(type, 500); // pause before next line
+            }
+
+        }
+    }
+
+    type();
+});
+</script>
+</body>
+</html>
